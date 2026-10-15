@@ -57,7 +57,7 @@ function fill(listId, games) {
   });
 }
 
-fetch("games.json")
+fetch(new URL("games.json", document.currentScript.src))
   .then((r) => {
     if (!r.ok) throw new Error(`games.json returned ${r.status}. Is it in the same folder as index.html?`);
     return r.json();
